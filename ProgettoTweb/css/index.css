@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css?family=Inder&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 93vh;
+  margin: 20px 0 0;
+
+  background-image: url('../img/garr.jpg');
+
+  font-family: "Inder", Helvetica, sans-serif;
+}
+
+img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin: 0 0 20px;
+
+  color: #eee;
+
+  font-weight: bold;
+}
+
+p {
+  margin: 20px 0 30px;
+
+  letter-spacing: 1px;
+
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+
+a {
+  margin: 15px 0;
+
+  text-decoration: none;
+
+  color: #333;
+
+  font-size: 14px;
+}
+
+.container {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+
+  border-radius: 10px;
+  background: #111111;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+  0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.form-container form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100%;
+  padding: 0 50px;
+
+  text-align: center;
+
+  background: #111111;
+}
+
+.form-container input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px 15px;
+
+  color: #eee;
+  border: none;
+  background: #222222;
+  transition: all ease-in-out 500ms;
+}
+
+ul {
+  list-style-type: none;
+  text-align: justify;
+  align-content: center;
+}
+
+li {
+  margin: 1rem 0;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 45px;
+
+  cursor: pointer;
+  transition: transform 80ms ease-in;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: white;
+  border: 1px solid #A039CC;
+  border-radius: 20px;
+  background: #A039CC;
+
+  font-size: 12px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #B25CDA;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  border-color: #fff;
+  background: transparent;
+}
+
+button.ghost:hover{
+  background-color: #fff;
+  color: #642480;
+  font-weight: bold;
+
+}
+
+
+.form-container {
+  position: absolute;
+  top: 0;
+
+  height: 100%;
+
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-up-container {
+  z-index: 2;
+  left: 0;
+
+  width: 50%;
+}
+
+.sign-in-container {
+  z-index: 1;
+  left: 0;
+
+  width: 50%;
+
+  opacity: 0;
+}
+
+.overlay-container {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 50%;
+
+  overflow: hidden;
+
+  width: 50%;
+  height: 100%;
+
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay {
+  position: relative;
+  left: -100%;
+
+  width: 200%;
+  height: 100%;
+
+  transition: transform 0.6s ease-in-out;
+  transform: translateX(0);
+
+  color: #fff;
+  background: linear-gradient(to right, #642480, #B25CDA) no-repeat 0 0;
+  background-size: cover;
+}
+
+.overlay-panel {
+  position: absolute;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 50%;
+  height: 100%;
+  padding: 0 40px;
+
+  transition: transform 0.6s ease-in-out;
+  transform: translateX(0);
+  text-align: center;
+
+}
+
+.overlay-right {
+  right: 0;
+
+  transform: translateX(0);
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+/* animation */
+
+/* Move signin to the right */
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+}
+
+/* Move overlay to the left */
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+/* Bring signup over signin panel */
+.container.right-panel-active .sign-in-container {
+  z-index: 5;
+
+  transform: translateX(100%);
+
+  opacity: 1;
+}
+
+/*Move overlay back to right*/
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+/* */
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+#flash {
+  color: rgb(255, 44, 46);
+  border: rgb(255, 44, 46) 1px solid;
+  padding: 10px;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  background-color: rgba(255, 255, 146, 0.7);
+}
+
+#w3c {
+  margin-top: 2vh;
+  height: 5vh;
+  margin-bottom: 0;
+}
+
+#w3c img {
+  width: 45px;
+  height: 30px;
+}
+
+.strength {
+  display: flex;
+  justify-content: space-evenly;
+  height: 30px;
+  width: 100%;
+}
+
+.bar{
+  margin: 25px 5px;
+  height: 100%;
+  width: 10%;
+  border: 2px solid #fff;
+  border-radius: 50%;
+
+  transition: box-shadow 500ms;
+  box-shadow: inset 0px 30px #111111;
+}
+
+.bar-show{
+  box-shadow: none;
+}
+
+.bar-1{
+  background: linear-gradient(to right, red, orangered);
+}
+
+.bar-2{
+  background: linear-gradient(to right, orangered, yellow);
+}
+
+.bar-3{
+  background: linear-gradient(to right, yellow, #b4da55);
+}
+
+.bar-4{
+  background: linear-gradient(to right, #b4da55, green);
+}
+
