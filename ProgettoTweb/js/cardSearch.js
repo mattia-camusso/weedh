@@ -1,3 +1,4 @@
+//Gestione della ricerca di carte per nome
 $(document).ready(function () {
     $('form').on("keyup", function () {
         let cdn = $(this).find('[name="name"]').val();
@@ -15,7 +16,7 @@ $(document).ready(function () {
     });
 });
 
-
+//mostra le carte richieste in un menu laterale
 function showCards(json) {
     console.log(json);
     if(json.errMsg) {
@@ -31,7 +32,7 @@ function showCards(json) {
     }
 }
 
-
+//cerca nel database la carta selezionata dal menu
 function displayClick() {
     let select = $(this).html();
     if (select !== ""){
@@ -44,7 +45,7 @@ function displayClick() {
         });
     }
 }
-
+//mostra l'immagine richiesta
 function fetchImg(json) {
     if(json.errMsg) {
         $("#errMsg").show();
@@ -60,60 +61,6 @@ function fetchImg(json) {
                 window.location.href = "artworkPage.php?id="+item.id;
             });
             $('#info').text(item.name+", artwork by "+item.artist);
-            checkFav(item.id);
-            $('#fav').off("click").one("click", function () {
-                addFav(item.id);
-            });
         });
     }
-}
-
-function addFav(id) {
-    $.ajax({
-        type: "POST",
-        data: { id: id},
-        url: 'addFavourite.php',
-        success: confirmedAdd
-    });
-}
-
-function checkFav(id) {
-    $.ajax({
-        type: "GET",
-        data: { id: id },
-        url: 'addFavourite.php',
-        success: check,
-        dataType: "json"
-    });
-}
-
-function check(json) {
-    let i = 0;
-    if(json.errMsg) {
-        $("#errMsg").show().text(json.errMsg);
-    } else {
-        json.fav.forEach(function (item) {
-            i++;
-        });
-        if(!i){
-            $('#fav').show();
-        } else {
-            $('#fav').hide();
-
-        }
-    }
-}
-
-
-function timer() {
-    $('.up p').remove();
-}
-
-function confirmedAdd() {
-        let p = $("<p></p>");
-        $('#fav').hide();
-        p.html("Added to Favourites");
-        p.css({"color":"#69ff69", "padding": "5px 15px"});
-        $('.up').append(p);
-        setTimeout(timer,2000);
 }

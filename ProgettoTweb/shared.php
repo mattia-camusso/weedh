@@ -3,7 +3,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-
+//controlla che esista una sessione, altrimenti l'utente è reindirizzato al login
 function is_logged()
 {
     if (!isset($_SESSION["name"])) {
@@ -11,6 +11,7 @@ function is_logged()
     }
 }
 
+//funzione per reindirizzamenti
 function redirect($url, $flash_message = NULL)
 {
     if ($flash_message) {
@@ -20,6 +21,7 @@ function redirect($url, $flash_message = NULL)
     die;
 }
 
+//funzione di connessione al database
 function db_connect()
 {
     $dsn = "mysql:dbname=allcards;host=localhost:3306";
@@ -30,6 +32,7 @@ function db_connect()
   }
 }
 
+//funzione di verifica e cifratura della password
 function password_correct($username, $password){
     try {
         $db = db_connect();
@@ -48,6 +51,7 @@ function password_correct($username, $password){
     }
 }
 
+//funzione di registrazione di un account, cifratura della password e inserimento dei dati nel db
 function register_account($username, $email, $password)
 {
     try {
@@ -75,6 +79,7 @@ function register_account($username, $email, $password)
 
 }
 
+//funzione che ritorna l'id di un utente dato lo username
 function get_userid($username){
     try {
         $db = db_connect();
@@ -93,6 +98,7 @@ function get_userid($username){
     }
 }
 
+//inserimento dei commenti nel db
 function set_comments($u_id, $c_id, $message){
 
     try {
@@ -127,6 +133,7 @@ function getComments(){
 }
 */
 
+//inserimento dei favourites nel database
 function set_favourites($u_id, $c_id){
 
     try {

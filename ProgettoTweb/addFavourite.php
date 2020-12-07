@@ -1,13 +1,16 @@
 <?php
 include("shared.php");
 
+//in caso di richiesta POST vengono inseriti i preferiti nel db dalla funzione set_favourites definita in shared.php
 if (isset($_POST['id'])) {
 
     $u_id = $_SESSION["userid"];;
     $c_id = $_POST['id'];
     set_favourites($u_id, $c_id);
 
-} else if (isset($_GET['id'])){
+
+} else if (isset($_GET['id'])){ //in caso di richiesta GET viene fatta una query per restituire gli artwork preferiti
+                                // dall'utente sotto forma di JSON
 
     $u_id = $_SESSION["userid"];
     $c_id = $_GET['id'];

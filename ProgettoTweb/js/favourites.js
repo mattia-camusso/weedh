@@ -1,7 +1,7 @@
 var image = [];
 var info =[];
 var i = 0;
-
+//gestione degli artwork preferiti dell'utente e la loro visualizzazione
 $(document).ready( function(){
     $.get({
         url: 'getUser.php',
@@ -11,6 +11,7 @@ $(document).ready( function(){
     findFav();
 });
 
+//vengono richiesti gli artwork preferiti dell'utente
 function findFav() {
     $.ajax({
         type: "GET",
@@ -21,7 +22,7 @@ function findFav() {
 }
 
 
-
+//cambia l'immagine visualizzata ogni 2,5 secondi
 function changeImg(){
     $('.slide img').attr("src","img/"+image[i]);
     $('#info').empty().html(info[i]);
@@ -33,6 +34,7 @@ function changeImg(){
     setTimeout("changeImg()",2500);
 }
 
+//gli artwork preferiti vengono inseriti in uno slideshow
 function showFav(json) {
     console.log(json);
     if(json.errMsg) {
@@ -61,7 +63,7 @@ function showFav(json) {
         }
     }
 }
-
+//visualizza lo username dell'utente
 function printName(json) {
     if (json.isSet) {
         $('#username').text(json.name);

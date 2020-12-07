@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/top.css">
     <link rel="icon" href="img/logo1.svg">
+    <!-- Mattia Camusso, sito dedicato alla creazione di mazzi per il popolare
+gioco di carte collezionabili Magic: The Gathering, header delle pagine principali con navbar -->
     <title>Document</title>
 </head>
 <body>

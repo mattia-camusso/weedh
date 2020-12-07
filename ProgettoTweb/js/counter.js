@@ -1,6 +1,6 @@
 var startLife = [];
 var victory;
-
+// gestione del life counter e dei punteggi dei giocatori
 $(document).ready( function () {
     //gameLoad();
     $('button').on("click", function () {
@@ -9,7 +9,7 @@ $(document).ready( function () {
         firstGame(nop,slt);
     });
 });
-
+//inizia una nuova partita usando i dati inseriti dall'utente
 function firstGame(nop, slt) {
     $('.wide').nextAll().remove();
     for (let i=0; i<nop; i++){
@@ -36,7 +36,7 @@ function firstGame(nop, slt) {
     $(".wide").hide();
     gameLoad();
 }
-
+//inizializza i contatori di ciascun giocatore
 function gameLoad() {
     victory = 0;
     for (let i = 0; i < startLife.length; i++) {
@@ -50,7 +50,7 @@ function gameLoad() {
         });
     }
 }
-
+// life up e life down gestiscono incrementi e decrementi dei punti vita dei giocatori
 function lifeUp(i) {
     if (!victory) {
         let life = $("#player" + i + "  .display");
@@ -75,6 +75,7 @@ function lifeDown(i) {
     }
 }
 
+//controlla se le condizioni di vittoria sono rispettate e un giocatore ha vinto la partita
 function checkWin() {
     let defeated = 0;
     let winner;
@@ -95,6 +96,7 @@ function checkWin() {
     }
 }
 
+//reinserisce il menu da cui è possibile creare una nuova partita
 function newGame(id) {
     $('.wide').show();
     let winnername = $('#player' + id + ' .pname').text();

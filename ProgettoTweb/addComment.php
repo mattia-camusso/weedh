@@ -1,6 +1,7 @@
 <?php
 include ('shared.php');
 
+//in caso di richiesta POST vengono inseriti i commenti nel db dalla funzione set_comments definita in shared.php
 if(isset($_POST['c_id']) && isset($_POST['message'])){
     $c_id = $_POST['c_id'];
     $message = strip_tags($_POST['message'], '<br>');
@@ -9,7 +10,8 @@ if(isset($_POST['c_id']) && isset($_POST['message'])){
         set_comments($u_id, $c_id, $message);
     }
 }
-
+//in caso di richiesta GET viene fatta una query per restituire i commenti
+// degli utenti sotto forma di JSON
 if (isset($_GET['c_id'])) {
     try {
         $db = db_connect();

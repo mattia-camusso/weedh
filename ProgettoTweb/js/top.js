@@ -1,3 +1,5 @@
+//animazione del menu mobile
+
 $(document).ready(function (){
     $("#burg-bar").on("click", function (){
         var mq = window.matchMedia("(max-width: 1080px)");

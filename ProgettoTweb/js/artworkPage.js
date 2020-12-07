@@ -1,12 +1,12 @@
 var c_id;
-
+//Gestione artwork page e caricamento dei commenti
 $(document).ready(function () {
     loadInfo();
     $('#fav').one("click", addFav);
     $('#comment').on("click", setComment);
 });
 
-
+//recupera l'id della carta e richiede le info associate
 function loadInfo() {
     let parameter = window.location.search.substr(1).split("=");
     $.ajax({
@@ -20,6 +20,7 @@ function loadInfo() {
     console.log(parameter[1]);
 }
 
+//inserisce nella pagina l'immagine, titolo e autore
 function showInfo(json) {
     console.log(json);
     if(json.errMsg) {
@@ -38,7 +39,7 @@ function showInfo(json) {
         });
     }
 }
-
+//gestione inserimento dei commenti
 function setComment() {
     let message = $('#test').find('[name="message"]').val();
     $.ajax({
@@ -51,7 +52,7 @@ function setComment() {
 
     $('html,body').animate({scrollTop: document.body.scrollHeight}, "fast");
 }
-
+//visualizzazione dei commenti
 function displayComments() {
     $.ajax({
         type: 'GET',
@@ -61,10 +62,11 @@ function displayComments() {
         success: showComments
     });
 }
-
+//caricamento dei commenti sulla pagina
 function showComments(json) {
     $('#comment-section').empty();
     json.comments.forEach(function (item) {
+        console.log(json);
         let lil = $('<div class="comment-section"></div>');
         let usn =$("<h4></h4>");
         let msg = $("<p></p>");
@@ -75,6 +77,8 @@ function showComments(json) {
     });
 }
 
+//le funzioni sottostanti si occupano di gestire l'aggiunta di un'immagine ai preferiti
+//dando un feedback visivo all'utente con una semplice animazione
 function addFav() {
     $.ajax({
         type: "POST",

@@ -70,6 +70,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ProgettoTweb\sql" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ProgettoTweb\js" />
     </key>
@@ -130,6 +133,14 @@
       <workItem from="1599838278246" duration="1137000" />
       <workItem from="1599944773780" duration="10558000" />
       <workItem from="1600008678057" duration="13945000" />
+      <workItem from="1600032224098" duration="8653000" />
+      <workItem from="1600092891454" duration="2409000" />
+      <workItem from="1600203371822" duration="321000" />
+      <workItem from="1600329768457" duration="3169000" />
+      <workItem from="1600333950482" duration="181000" />
+      <workItem from="1600344927502" duration="329000" />
+      <workItem from="1600347417009" duration="606000" />
+      <workItem from="1600371919723" duration="1011000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;sanitize input&quot;">
       <created>1586704706793</created>
@@ -172,46 +183,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="&quot;session implement&quot;" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="349" y="69" key="#CLI_Interpreters" timestamp="1591401808396">
+    <state x="524" y="142" width="424" height="487" key="FileChooserDialogImpl" timestamp="1600268922979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="349" y="69" key="#CLI_Interpreters/0.0.1536.824@0.0.1536.824" timestamp="1591401808396" />
-    <state x="427" y="0" width="596" height="738" key="#PHP" timestamp="1591401071596">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="427" y="0" key="#PHP/0.0.1536.824@0.0.1536.824" timestamp="1591401071596" />
-    <state x="194" y="254" key="#SQL_Dialects" timestamp="1591460597710">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="194" y="254" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1591460597710" />
-    <state x="524" y="142" width="424" height="487" key="FileChooserDialogImpl" timestamp="1599838274220">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="524" y="142" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599838274220" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1591403328543">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591403328543" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1591403328543">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591403328543" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1591403328543">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591403328543" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1591403328543">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591403328543" />
+    <state x="524" y="142" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600268922979" />
     <state x="210" y="4" width="992" height="733" key="SettingsEditor" timestamp="1599596008895">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="210" y="4" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599596008895" />
-    <state x="0" y="0" width="1252" height="810" key="dock-window-1" timestamp="1591464716507">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="0" y="0" width="1252" height="810" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1591464716507" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1599595171987">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

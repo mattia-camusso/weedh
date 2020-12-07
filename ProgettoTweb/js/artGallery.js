@@ -1,3 +1,5 @@
+//Gestione della galleria e caricamento immagini
+
 var limit = 12;
 $(document).ready( function () {
     allImages();
@@ -7,6 +9,7 @@ $(document).ready( function () {
     });
 });
 
+//carica fino a 'limit' immagini dal db
 function allImages() {
     $.ajax({
         type: "GET",
@@ -17,6 +20,7 @@ function allImages() {
     });
 }
 
+//posiziona le immagini ricevute all'interno del grid-container
 function fetchImg(json) {
     console.log(json);
     if(json.errMsg) {

@@ -1,6 +1,4 @@
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
+//animazione dello slide del login e del validatore di password
 let strength;
 let validations = [];
 
@@ -12,16 +10,18 @@ $(document).ready(function () {
     });
     $('#sign-up input[name=password]').on("focus", strengthOn).on("focusout", strengthOff);
     $('#sign-up').on("submit", verify);
+
+    document.getElementById('signIn').addEventListener('click', () =>
+        document.getElementById('container').classList.add('right-panel-active')
+    );
+
+    document.getElementById('signUp').addEventListener('click', () =>
+        document.getElementById('container').classList.remove('right-panel-active')
+    );
 });
 
-signInButton.addEventListener('click', () =>
-    container.classList.add('right-panel-active')
-);
 
-signUpButton.addEventListener('click', () =>
-    container.classList.remove('right-panel-active')
-);
-
+//gestione di messaggi di errore all'utente, validazione lato front end
 function verify(event) {
 
     let user = $(this).find('[name="username"]').val();
@@ -41,6 +41,7 @@ function verify(event) {
 
 }
 
+//animazione del pannello della validazione password
 function strengthOn() {
     $('.panel-1').hide();
     $('.panel-2').show();
@@ -55,6 +56,7 @@ function strengthOff() {
     $('.overlay').css("background", "linear-gradient(to right, #642480, #B25CDA)");
 }
 
+//controllo della robustezza della password
 function validate() {
     let pwd = $('#sign-up input[name=password]').val();
     validations = [
@@ -79,9 +81,9 @@ function validate() {
             $(this).css("color", "#f42069");
         }
     })
-    //console.log(strength);
 }
 
+//stampa messaggi d'errore
 function printFlash(json) {
     if (json.isSet) {
         $('#flash').show().text(json.flash);

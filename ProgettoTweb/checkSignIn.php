@@ -1,6 +1,8 @@
 <?php
 include("shared.php");
 
+//questa pagina riceve in input i dati dal form del signin, filtra gli input e logga l'utente con l'aiuto
+//di funzioni definite in shared
 if (isset($_POST["username"]) && isset($_POST["password"])){
     $username = $_POST["username"];
     $password = filter_input(INPUT_POST, 'password');

@@ -1,6 +1,7 @@
 <?php
 include("shared.php");
-
+//questa pagina riceve in input i dati dal form del signup, filtra gli input e registra l'utente con l'aiuto
+//di funzioni definite in shared
 if(isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])){
     $username = $_POST["username"];
     $email = filter_input(INPUT_POST, 'email',

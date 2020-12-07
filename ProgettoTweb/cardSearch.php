@@ -6,7 +6,7 @@ is_logged();
 <div class="wrapper">
     <div class="container left">
         <h3 id="info">Fetching info...</h3>
-        <img src="" id="display">
+        <img src="" id="display" >
     </div>
 <div class="container right">
     <div class="up">
@@ -19,8 +19,7 @@ is_logged();
             </dl>
         </form>
         <span>
-        <button id="add" hidden="hidden">Open</button>
-        <button id="fav" hidden="hidden">Favourite</button>
+        <button id="add" hidden="hidden">Open Artwork</button>
         <span>
     </div>
     <div class="down">
